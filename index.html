@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Compound Interest Calculator</title>
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Compound Interest Calculator</h1>
+        <form id="investmentForm">
+            <label for="principal">Starting Amount:</label>
+            <input type="number" id="principal" required>
+
+            <label for="rate">Growth Rate per Year (%):</label>
+            <input type="number" id="rate" step="0.1" required>
+
+            <label for="contribution">Monthly Contribution:</label>
+            <input type="number" id="contribution" required>
+
+            <label for="years">Duration of Investment (Years):</label>
+            <input type="number" id="years" required>
+
+            <button type="button" onclick="calculate()">Calculate</button>
+        </form>
+
+        <!-- Add this div with a default style -->
+        <div id="result" style="display: none;"></div>
+
+        <!-- Add this canvas element with a class to hide it initially -->
+        <canvas id="investmentChart" class="hidden" width="400" height="200"></canvas>
+    </div>
+    <div class="disclaimer" id="disclaimer">
+        <div class="disclaimer-content">
+            <span class="close-btn" onclick="hideDisclaimer()">×</span>
+            <p>This calculator is for estimation purposes only. Actual results may vary. It does not guarantee any financial outcomes. Consult a financial advisor for accurate and personalized advice.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
